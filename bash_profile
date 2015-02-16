@@ -13,7 +13,7 @@ alias top="top -o cpu"
 alias subl2='/Applications/Sublime\ Text\ 2.app/Contents/MacOS/Sublime\ Text\ 2'
 alias subl3='/Applications/Sublime\ Text.app/Contents/MacOS/Sublime\ Text'
 
-source .bash_colors
+source ${HOME}/.bash_colors
 prompt_color=${IPurple}
 bg_color=${On_Cyan}
 if [ ${USER} == "root" ]; then
