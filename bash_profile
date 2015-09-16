@@ -1,10 +1,15 @@
+shopt -s histappend
 export HISTCONTROL=ignoredups
 export HISTIGNORE='history':'ls'
+
 CELLAR='/usr/local/Cellar'
 PATH=/usr/local/opt/coreutils/libexec/gnubin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:${CELLAR}/python3/3.4.3/bin:${CELLAR}/node/0.12.2_1/bin
 # :/Users/jahrens/bin:/usr/local/opt/go/libexec/bin:${CELLAR}/go/1.4.2/bin
 export PATH=${HOME}/bin:${PATH}
 export REPO="${HOME}/go/src/github.com/stackengine"
+
+export AWS_ACCESS_KEY=$(grep -o '[A-Z0-9]\{20\}' ${HOME}/.aws/credentials)
+export AWS_SECRET_KEY=$(grep -o '[a-zA-Z0-9\/\=\+\-]\{40\}' ${HOME}/.aws/credentials)
 
 alias sl='ls -AFc'
 alias ls='ls -AFc'
@@ -15,7 +20,7 @@ alias vi='vim'
 alias 7zip="7z a -mx=9 -t7z -mmt -r"
 alias minicom="minicom -b 9600 -D $(ls /dev/tty.NoZAP* 2>/dev/null)"
 alias mcom="minicom -b 57600 -D $(ls /dev/tty.NoZAP* 2>/dev/null)"
-alias grep='grep --color=always -n'
+alias ggrep='grep --color=always -n'
 alias less='less -R'
 alias top="top -o cpu"
 alias repo="cd ${REPO}"
