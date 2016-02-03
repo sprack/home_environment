@@ -7,6 +7,7 @@ PATH=/usr/local/opt/coreutils/libexec/gnubin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/
 # :/Users/jahrens/bin:/usr/local/opt/go/libexec/bin:${CELLAR}/go/1.4.2/bin
 export PATH=${HOME}/bin:${PATH}
 export REPO="${HOME}/go/src/github.com/stackengine"
+export IPREGEX='[0-9]\{1,3\}\.[0-9]\{1,3\}\.[0-9]\{1,3\}\.[0-9]\{1,3\}'
 
 export AWS_ACCESS_KEY=$(grep -o '[A-Z0-9]\{20\}' ${HOME}/.aws/credentials)
 export AWS_SECRET_KEY=$(grep -o '[a-zA-Z0-9\/\=\+\-]\{40\}' ${HOME}/.aws/credentials)
@@ -41,5 +42,6 @@ if [ -e ${HOME}/.work_profile ]; then source ${HOME}/.work_profile; fi
 if [ -e ${HOME}/.git-completion.bash ]; then source ${HOME}/.git-completion.bash; fi
 
 GNUTILS='/usr/local/opt/coreutils/libexec/gnubin'
-export GOPATH=${CELLAR}/go/1.4.2
-export PATH=${GNUTILS}:/usr/local/opt/go/libexec/bin:${GOPATH//://bin:}/bin:${PATH}
+# export GOPATH=${CELLAR}/go/1.4.2
+export GOPATH=${HOME}/go/
+export PATH=${GNUTILS}:/usr/local/go/bin:${GOPATH//://bin:}/bin:${PATH}
