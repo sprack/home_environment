@@ -3,10 +3,11 @@ export HISTCONTROL=ignoredups
 export HISTIGNORE='history':'ls'
 
 CELLAR='/usr/local/Cellar'
-PATH=/usr/local/opt/coreutils/libexec/gnubin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:${CELLAR}/python3/3.4.3/bin:${CELLAR}/node/0.12.2_1/bin
+PATH=/usr/local/opt/coreutils/libexec/gnubin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:${CELLAR}/python3/3.4.3/bin:${CELLAR}/node/0.12.2_1/bin
 # :/Users/jahrens/bin:/usr/local/opt/go/libexec/bin:${CELLAR}/go/1.4.2/bin
 export PATH=${HOME}/bin:${PATH}
 export REPO="${HOME}/go/src/github.com/stackengine"
+export FUSION="${HOME}/Library/Application\ Support/Autodesk/Autodesk\ Fusion\ 360"
 export IPREGEX='[0-9]\{1,3\}\.[0-9]\{1,3\}\.[0-9]\{1,3\}\.[0-9]\{1,3\}'
 
 export AWS_ACCESS_KEY=$(grep -o '[A-Z0-9]\{20\}' ${HOME}/.aws/credentials)
@@ -25,6 +26,7 @@ alias ggrep='grep --color=always -n'
 alias less='less -R'
 alias top="top -o cpu"
 alias repo="cd ${REPO}"
+alias fusion="cd ${FUSION}/API/"
 alias subl2='/Applications/Sublime\ Text\ 2.app/Contents/MacOS/Sublime\ Text\ 2'
 alias subl3='/Applications/Sublime\ Text.app/Contents/MacOS/Sublime\ Text'
 
@@ -45,3 +47,6 @@ GNUTILS='/usr/local/opt/coreutils/libexec/gnubin'
 # export GOPATH=${CELLAR}/go/1.4.2
 export GOPATH=${HOME}/go/
 export PATH=${GNUTILS}:/usr/local/go/bin:${GOPATH//://bin:}/bin:${PATH}
+# export PYENV_ROOT="$HOME/.pyenv"
+export PATH="$PYENV_ROOT/bin:$PATH"
+# eval "$(pyenv init -)"
